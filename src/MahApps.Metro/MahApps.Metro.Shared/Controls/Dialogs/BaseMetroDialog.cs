@@ -395,6 +395,7 @@ namespace MahApps.Metro.Controls.Dialogs
             this.CancellationToken = CancellationToken.None;
             this.DialogTitleFontSize = Double.NaN;
             this.DialogMessageFontSize = Double.NaN;
+            this.FullWidth = true;
         }
 
         /// <summary>
@@ -439,6 +440,8 @@ namespace MahApps.Metro.Controls.Dialogs
         /// Gets/sets the maximum height. (Default is unlimited height, <a href="http://msdn.microsoft.com/de-de/library/system.double.nan">Double.NaN</a>)
         /// </summary>
         public double MaximumBodyHeight { get; set; }
+
+        public bool FullWidth { get; set; }
 
         /// <summary>
         /// Gets or sets which button should be focused by default

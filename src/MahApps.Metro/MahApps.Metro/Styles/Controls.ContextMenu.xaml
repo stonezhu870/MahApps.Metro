@@ -254,6 +254,7 @@
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuContent, TypeInTargetAssembly={x:Type FrameworkElement}}" TargetType="{x:Type ContentControl}">
         <Border Background="{DynamicResource SubMenuBackgroundBrush}"
                 BorderBrush="{DynamicResource SubMenuBorderBrush}"
+                VerticalAlignment="Center"
                 BorderThickness="1">
             <ContentPresenter />
         </Border>
@@ -283,6 +284,8 @@
                 <ContentPresenter Margin="{TemplateBinding Padding}"
                                   ContentSource="Header"
                                   RecognizesAccessKey="True"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
             </DockPanel>
             <Popup x:Name="PART_Popup"
@@ -378,6 +381,7 @@
                 <ContentPresenter Margin="{TemplateBinding Padding}"
                                   ContentSource="Header"
                                   RecognizesAccessKey="True"
+                           
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
             </DockPanel>
         </Grid>
@@ -404,7 +408,7 @@
     </ControlTemplate>
 
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuHeaderTemplateKey, TypeInTargetAssembly={x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
-        <Grid SnapsToDevicePixels="True">
+        <Grid SnapsToDevicePixels="True" VerticalAlignment="Center">
             <Rectangle x:Name="Bg"
                        Fill="{TemplateBinding Background}"
                        Stroke="{TemplateBinding BorderBrush}"
@@ -436,10 +440,13 @@
                 <ContentPresenter Grid.Column="2"
                                   Margin="{TemplateBinding Padding}"
                                   ContentSource="Header"
+                                  VerticalAlignment="Center"
                                   RecognizesAccessKey="True"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                 <TextBlock Grid.Column="4"
                            Margin="{TemplateBinding Padding}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
                            Text="{TemplateBinding InputGestureText}"
                            Visibility="Collapsed" />
                 <Path Grid.Column="5"
@@ -546,6 +553,8 @@
                                   RecognizesAccessKey="True"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                 <TextBlock Grid.Column="4"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
                            Margin="{TemplateBinding Padding}"
                            Text="{TemplateBinding InputGestureText}" />
             </Grid>

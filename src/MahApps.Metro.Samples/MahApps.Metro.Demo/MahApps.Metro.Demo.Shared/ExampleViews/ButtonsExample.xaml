@@ -185,6 +185,12 @@
                                    IsChecked="True"
                                    IsEnabled="False" />
             <Controls:ToggleSwitch Margin="{StaticResource ControlMargin}" IsEnabled="False" />
+            <Canvas Height="200" Name="canvas" Background="Red" HorizontalAlignment="Stretch">
+                <Button Canvas.Right="0" Canvas.Top="0" Content="12" Width="15" Height="15" VerticalContentAlignment="Center"/>
+                <Grid Width="{Binding ElementName=canvas, Path=ActualWidth}" HorizontalAlignment="Center" Height="{Binding ElementName=canvas, Path=ActualHeight}">
+                    <Button Width="80" Height="80" Content="123" Canvas.Left="26" Canvas.Top="63"/>
+                </Grid>
+            </Canvas>
         </StackPanel>
 
         <StackPanel Grid.Row="1"

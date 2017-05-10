@@ -36,7 +36,7 @@ namespace MahApps.Metro.Controls.Dialogs
 
                     SetDialogFontSizes(settings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, settings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -103,7 +103,7 @@ namespace MahApps.Metro.Controls.Dialogs
 
                     SetDialogFontSizes(settings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, settings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -170,7 +170,7 @@ namespace MahApps.Metro.Controls.Dialogs
 
                     SetDialogFontSizes(settings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, settings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -238,7 +238,7 @@ namespace MahApps.Metro.Controls.Dialogs
 
                     SetDialogFontSizes(settings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, settings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -337,7 +337,7 @@ namespace MahApps.Metro.Controls.Dialogs
                 {
                     SetDialogFontSizes(settings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, settings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -377,7 +377,7 @@ namespace MahApps.Metro.Controls.Dialogs
                 {
                     SetDialogFontSizes(dialog.DialogSettings, dialog);
 
-                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog);
+                    SizeChangedEventHandler sizeHandler = SetupAndOpenDialog(window, dialog, dialog.DialogSettings);
                     dialog.SizeChangedHandler = sizeHandler;
 
                     return dialog.WaitForLoadAsync().ContinueWith(x =>
@@ -450,11 +450,16 @@ namespace MahApps.Metro.Controls.Dialogs
             return t.Task;
         }
 
-        private static SizeChangedEventHandler SetupAndOpenDialog(MetroWindow window, BaseMetroDialog dialog)
+        private static SizeChangedEventHandler SetupAndOpenDialog(MetroWindow window, BaseMetroDialog dialog, MetroDialogSettings settings)
         {
             dialog.SetValue(Panel.ZIndexProperty, (int)window.overlayBox.GetValue(Panel.ZIndexProperty) + 1);
             dialog.MinHeight = window.ActualHeight / 4.0;
             dialog.MaxHeight = window.ActualHeight;
+
+            if (settings.FullWidth == false)
+            {
+                dialog.MaxWidth = window.ActualWidth - 60;
+            }
 
             SizeChangedEventHandler sizeHandler = (sender, args) =>
             {

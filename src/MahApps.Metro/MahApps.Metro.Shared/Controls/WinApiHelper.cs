@@ -50,8 +50,11 @@ namespace MahApps.Metro.Controls
             }
             catch (Exception exception)
             {
-                throw new MahAppsException("Uups, this should not happen! Sorry for this exception! Is this maybe happend on a virtual machine or via remote desktop? Please let us know, thx.", exception);
+                //xp can't used
+                //throw new MahAppsException("Uups, this should not happen! Sorry for this exception! Is this maybe happend on a virtual machine or via remote desktop? Please let us know, thx.", exception);
             }
+
+            return new Standard.POINT();
         }
     }
 }

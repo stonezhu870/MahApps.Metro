@@ -107,8 +107,8 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MetroScrollBarThumbMouseOverStoryboard}" />
-                                <VisualState x:Name="Pressed" Storyboard="{StaticResource MetroScrollBarThumbPressedStoryboard}" />
+                                <!--<VisualState x:Name="MouseOver" Storyboard="{StaticResource MetroScrollBarThumbMouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource MetroScrollBarThumbPressedStoryboard}" />-->
                                 <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
