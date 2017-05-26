@@ -3042,29 +3042,45 @@
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         public static POINT GetPhysicalCursorPos()
         {
-            POINT pt;
-            if (!_GetPhysicalCursorPos(out pt))
+            try
             {
-                HRESULT.ThrowLastError();
+                POINT pt;
+                if (!_GetPhysicalCursorPos(out pt))
+                {
+                    HRESULT.ThrowLastError();
+                }
+                return pt;
             }
-            return pt;
+            catch
+            {
+                return new POINT();
+            }
         }
 
         [SecurityCritical]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         public static bool TryGetPhysicalCursorPos(out POINT pt)
         {
-            var returnValue = _GetPhysicalCursorPos(out pt);
-            // Sometimes Win32 will fail this call, such as if you are
-            // not running in the interactive desktop. For example,
-            // a secure screen saver may be running.
-            if (!returnValue)
+            try
             {
-                System.Diagnostics.Debug.WriteLine("GetPhysicalCursorPos failed!");
+                var returnValue = _GetPhysicalCursorPos(out pt);
+                // Sometimes Win32 will fail this call, such as if you are
+                // not running in the interactive desktop. For example,
+                // a secure screen saver may be running.
+                if (!returnValue)
+                {
+                    System.Diagnostics.Debug.WriteLine("GetPhysicalCursorPos failed!");
+                    pt.x = 0;
+                    pt.y = 0;
+                }
+                return returnValue;
+            }
+            catch
+            {
                 pt.x = 0;
                 pt.y = 0;
+                return false;
             }
-            return returnValue;
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
