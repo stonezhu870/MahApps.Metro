@@ -73,6 +73,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ExampleWindows\VSDemo.xaml.cs">
       <DependentUpon>VSDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainWindow.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainWindowViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Markup\EnumBindingSourceExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Navigation\HomePage.xaml.cs">
@@ -177,5 +178,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)ExampleViews\ButtonsExample.xaml" />
+    <None Include="$(MSBuildThisFileDirectory)ExampleViews\ColorExample.xaml" />
+    <None Include="$(MSBuildThisFileDirectory)MainWindow.xaml" />
   </ItemGroup>
 </Project>
