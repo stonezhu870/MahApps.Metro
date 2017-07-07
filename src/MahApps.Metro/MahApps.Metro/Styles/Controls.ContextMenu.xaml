@@ -575,6 +575,7 @@
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="Bg" Property="Fill" Value="{DynamicResource MenuItemSelectionFill}" />
                 <Setter TargetName="Bg" Property="Stroke" Value="{DynamicResource MenuItemSelectionStroke}" />
+                <Setter Property="Foreground" Value="{DynamicResource MenuItemSelectionForeground}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{DynamicResource DisabledMenuItemForeground}" />

@@ -157,7 +157,8 @@
 
     <SolidColorBrush x:Key="MenuItemSelectionFill" Color="#DEDEDE" options:Freeze="True" />
     <SolidColorBrush x:Key="MenuItemSelectionStroke" Color="#DEDEDE" options:Freeze="True" />
-
+    <SolidColorBrush x:Key="MenuItemSelectionForeground" Color="#000000" options:Freeze="True" />
+    
     <SolidColorBrush x:Key="TopMenuItemPressedFill" Color="#DEDEDE" options:Freeze="True" />
     <SolidColorBrush x:Key="TopMenuItemPressedStroke" Color="#E0717070" options:Freeze="True" />
     <SolidColorBrush x:Key="TopMenuItemSelectionStroke" Color="#90717070" options:Freeze="True" />

@@ -109,7 +109,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="DayButtonFocusVisual" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="NormalText" Property="TextElement.Foreground" Value="{DynamicResource AccentColorBrush}" />
+                            <Setter TargetName="NormalText" Property="TextElement.Foreground" Value="#ffffff" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -119,7 +119,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="DayButtonFocusVisual" Property="Stroke" Value="{DynamicResource GrayBrush1}" />
                             <Setter TargetName="DayButtonFocusVisual" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="NormalText" Property="TextElement.Foreground" Value="{DynamicResource AccentColorBrush}" />
+                            <Setter TargetName="NormalText" Property="TextElement.Foreground" Value="#ffffff" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -160,7 +160,7 @@
                                        FontFamily="{DynamicResource ContentFontFamily}"
                                        FontSize="{DynamicResource ContentFontSize}"
                                        FontWeight="Bold"
-                                       Foreground="{DynamicResource BlackBrush}"
+                                       Foreground="#ffffff"
                                        Opacity="0.8"
                                        Text="{Binding}" />
                         </DataTemplate>

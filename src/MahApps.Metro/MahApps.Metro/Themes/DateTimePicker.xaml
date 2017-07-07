@@ -389,7 +389,7 @@
 
     <Style BasedOn="{StaticResource TimePartPickerBase}" TargetType="{x:Type controls:DateTimePicker}">
         <Setter Property="IsTodayHighlighted" Value="True" />
-        <Setter Property="controls:TextBoxHelper.Watermark" Value="Select a date" />
+        <Setter Property="controls:TextBoxHelper.Watermark" Value="" />
     </Style>
 
     <Style BasedOn="{StaticResource TimePartPickerBase}" TargetType="{x:Type controls:TimePicker}">
