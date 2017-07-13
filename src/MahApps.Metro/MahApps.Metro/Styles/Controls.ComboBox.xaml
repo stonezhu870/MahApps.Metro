@@ -6,7 +6,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
+    <SolidColorBrush x:Key="ComBoBoxSelectBrush" Color="CornflowerBlue" ></SolidColorBrush>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
     <Style x:Key="Combobox.BtnArrowStyle" TargetType="Path">
@@ -346,6 +346,7 @@
                                      Grid.Row="1"
                                      Grid.Column="0"
                                      Margin="1"
+                                     SelectionBrush="{StaticResource ComBoBoxSelectBrush}"
                                      Padding="{TemplateBinding Padding}"
                                      HorizontalAlignment="Stretch"
                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
