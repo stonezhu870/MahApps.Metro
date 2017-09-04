@@ -125,7 +125,7 @@
 
     <!--  fugging Scrollbars  -->
     <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
-        <Grid x:Name="HorizontalRoot" Height="{TemplateBinding Height}">
+        <Grid x:Name="HorizontalRoot">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="0.00001*" />

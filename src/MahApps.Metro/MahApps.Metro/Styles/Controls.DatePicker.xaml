@@ -95,12 +95,13 @@
                                            TextAlignment="{TemplateBinding Controls:TextBoxHelper.WatermarkAlignment}" />
                             </ContentControl>
 
-                            <Popup x:Name="PART_Popup"
+                            <Controls:PopupEx x:Name="PART_Popup"
                                    Grid.Row="1"
                                    Grid.Column="0"
                                    AllowsTransparency="True"
                                    Placement="Bottom"
-                                   PlacementTarget="{Binding ElementName=PART_Root}"
+                                   IsTopmost="False"
+                                   PopupPlacementTarget="{Binding ElementName=PART_Root}"
                                    StaysOpen="True" />
                         </Grid>
                         <Border x:Name="DisabledVisualElement"

@@ -104,6 +104,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Pivot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PivotItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Planerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PopupEx.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Position.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ProgressRing.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PropertyChangeNotifier.cs" />
